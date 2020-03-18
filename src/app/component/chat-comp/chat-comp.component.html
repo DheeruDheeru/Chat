@@ -1,0 +1,32 @@
+<nb-chat title="Mohit" size="medium" status="warning">
+    <nb-chat-message *ngFor="let message of messages"
+        [type]="message.type"
+        [message]="message.text"
+        [reply]="message.reply"
+        [sender]="message.user.name"
+        [date]="message.date"
+        [files]="message.files"
+        [quote]="message.quote"
+        [latitude]="message.latitude"
+        [longitude]="message.longitude"
+        [avatar]="message.user.avatar">
+    </nb-chat-message>
+    <nb-chat-form (send)="sendMessage($event, 'Mohit', 'http://www.reactiongifs.com/r/wnd1.gif', true)" [showButton]="true" [dropFiles]="true">
+    </nb-chat-form>
+</nb-chat>
+<nb-chat title="Vishal" size="medium" status="success">
+    <nb-chat-message *ngFor="let message of messages"
+        [type]="message.type"
+        [message]="message.text"
+        [reply]="!message.reply"
+        [sender]="message.user.name"
+        [date]="message.date"
+        [files]="message.files"
+        [quote]="message.quote"
+        [latitude]="message.latitude"
+        [longitude]="message.longitude"
+        [avatar]="message.user.avatar">
+    </nb-chat-message>
+    <nb-chat-form (send)="sendMessage($event, 'Vishal', 'https://i.gifer.com/no.gif', false)" [showButton]="true" [dropFiles]="true">
+    </nb-chat-form>
+</nb-chat>
